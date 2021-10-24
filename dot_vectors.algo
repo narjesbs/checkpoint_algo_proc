@@ -1,0 +1,32 @@
+FUNCTION dot_product ( vec1,vec2 : ARRAY_OF FLOAT , n:INTEGER ) : FLOAT
+VAR
+    product: FLOAT:= 0;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        FOR j FROM 0 TO n-1 STEP 1  DO
+            product:= product + vec1[i] * vec2[j];
+        END_FOR
+    END_FOR
+    RETURN product ;
+END
+
+ALGORITHM dot_product_algorithm
+VAR
+    vec1 : ARRAY_OF FLOAT[100];
+    vec2 : ARRAY_OF FLOAT[100];
+    n: INTEGER;
+    p_scalar: FLOAT;
+
+BEGIN
+    REPEAT
+        read(n);
+    UNTIL (n<100)
+
+    p_scalar:= dot_product(vec1,vec2,n);
+    
+    IF (p_scalar = 0) THEN
+        write ("the two vectors are orthogonal");
+    ELSE
+        write ("the two vectors are not orthogonal");
+    END_IF
+END
