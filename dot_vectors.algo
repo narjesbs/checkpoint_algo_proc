@@ -1,6 +1,7 @@
 FUNCTION dot_product ( vec1,vec2 : ARRAY_OF FLOAT , n:INTEGER ) : FLOAT
 VAR
     product: FLOAT:= 0;
+    i,j: INTEGER:=0;
 BEGIN
     FOR i FROM 0 TO n-1 STEP 1  DO
         FOR j FROM 0 TO n-1 STEP 1  DO
